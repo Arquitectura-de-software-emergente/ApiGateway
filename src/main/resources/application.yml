@@ -14,7 +14,12 @@ spring:
       enabled: false
     gateway:
       routes:
+        - id: agency
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/api/v1/agency/**
         - id: guide
           uri: http://localhost:8083/
           predicates:
             - Path=/api/v1/guide/**
+
