@@ -38,4 +38,8 @@ spring:
           uri: http://localhost:8083/
           predicates:
             - Path=/api/v1/guide/**
+        - id: reservation
+          uri: http://localhost:8086/
+          predicates:
+            - Path=/api/v1/reservation/**
 
