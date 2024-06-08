@@ -1,0 +1,20 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    config:
+      enabled: false
+    gateway:
+      routes:
+        - id: guide
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/api/v1/guide/**
